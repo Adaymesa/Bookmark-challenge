@@ -16,19 +16,11 @@
 # users commonly want.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+
 require 'capybara/rspec'
-require './app/models/link'
-require 'data_mapper'
-require 'dm-postgres-adapter'
-require 'dm-migrations'
-
-
-require './app/app.rb'
+require './app/app'
 
 Capybara.app = BookMarkMgr
-
-
-
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
@@ -107,9 +99,4 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
-  config.failure_color = :yellow
-  config.pending_color = :magenta
-  config.tty = true
-  config.color = true
-
 end
