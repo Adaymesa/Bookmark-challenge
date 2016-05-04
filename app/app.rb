@@ -3,7 +3,16 @@ require 'tilt/erb'
 
 class W4BookmarkManager < Sinatra::Base
   get '/links' do
-    erb(:links)
+    erb(:'links/index')
+  end
+
+  get '/links/new' do
+    erb(:'links/new')
+  end
+
+  post '/links' do
+    Link.create(title: "Google", url: "www.google.com")
+    redirect to('/links')
   end
 
   # start the server if ruby file executed directly
