@@ -1,8 +1,9 @@
 require 'sinatra/base'
+require 'tilt/erb'
 
 class W4BookmarkManager < Sinatra::Base
-  get '/list' do
-    'Hello w4-bookmark_manager!'
+  get '/links' do
+    erb(:links)
   end
 
   # start the server if ruby file executed directly
