@@ -8,4 +8,9 @@ gem "rspec-sinatra"
 gem "capybara"
 gem "data_mapper"
 gem "dm-postgres-adapter"
+gem "dm-transactions"
 # gem "rails"
+
+group :test do
+  gem 'database_cleaner'
+end
