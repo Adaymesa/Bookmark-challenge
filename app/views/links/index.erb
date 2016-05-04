@@ -1,3 +1,10 @@
-"www.google.com"
+<h1> Links </h1>
 
-"Your Google link has been saved"
+<ul id='links'>
+  <% @links.each do |link| %>
+    <li>
+      Title: <%= link.title %>
+      URL:   <%= link.url   %>
+    </li>
+  <% end %>
+</ul>

@@ -1,8 +1,12 @@
+ENV['RACK_ENV'] ||= 'development'
 require 'sinatra/base'
 require 'tilt/erb'
+require_relative './models/link'
+
 
 class W4BookmarkManager < Sinatra::Base
   get '/links' do
+    @links = Link.all
     erb(:'links/index')
   end
 
@@ -11,7 +15,7 @@ class W4BookmarkManager < Sinatra::Base
   end
 
   post '/links' do
-    Link.create(title: "Google", url: "www.google.com")
+    Link.create(title: params[:title], url: params[:url])
     redirect to('/links')
   end
 

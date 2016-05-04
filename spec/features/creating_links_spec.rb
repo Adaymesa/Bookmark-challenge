@@ -5,6 +5,6 @@ feature 'browsing' do
     fill_in :url, with: 'www.google.com'
     click_button 'Submit'
     expect(current_path).to eq '/links'
-    expect(page).to have_content 'Your Google link has been saved'
+    expect(page).to have_content 'www.google.com'
   end
 end
