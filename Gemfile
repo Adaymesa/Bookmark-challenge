@@ -13,3 +13,7 @@ group 'development' do
   gem 'dm-postgres-adapter'
   gem 'sinatra'
 end
+
+group 'production' do
+  gem 'pg'
+end
