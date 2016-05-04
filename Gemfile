@@ -1,15 +1,26 @@
-source "https://rubygems.org"
+# Gemfile
+source 'https://rubygems.org'
 
-ruby '2.3.0'
+gem 'data_mapper'
+gem 'dm-postgres-adapter'
+gem 'database_cleaner'
+gem 'capybara'
+gem 'rspec'
+gem 'sinatra'
 
-group 'test' do
-  gem 'rspec'
-  gem 'capybara'
-  gem 'database_cleaner'
-end
 
-group 'development' do
-  gem 'data_mapper'
-  gem 'dm-postgres-adapter'
-  gem 'sinatra'
-end
+# source "https://rubygems.org"
+
+# ruby '2.3.0'
+
+# group 'test' do
+#   gem 'rspec'
+#   gem 'capybara'
+#   gem 'database_cleaner'
+# end
+
+# group 'development' do
+#   gem 'data_mapper'
+#   gem 'dm-postgres-adapter'
+#   gem 'sinatra'
+# end
