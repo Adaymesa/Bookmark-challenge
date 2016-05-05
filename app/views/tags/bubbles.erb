@@ -2,10 +2,11 @@
 
 <ul id='links'>
   <% @links.each do |link| %>
+  <% if link.tags.collect(&:name).pop == 'bubbles' %>
     <li>
       Title: <%= link.title %>
       URL:   <%= link.url   %>
-      Tag:   <%= link.tags.collect(&:name).pop   %>
     </li>
+    <% end %>
   <% end %>
 </ul>
