@@ -3,7 +3,7 @@ ENV["RACK_ENV"] = "test"
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
-require './app/models/link'
+# require './app/models/link'
 require './app/app'
 require 'database_cleaner'
 require 'tilt/erb'
