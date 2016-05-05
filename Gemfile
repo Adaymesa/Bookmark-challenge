@@ -7,6 +7,7 @@ gem 'database_cleaner'
 gem 'capybara'
 gem 'rspec'
 gem 'sinatra'
+gem 'rake'
 
 
 # source "https://rubygems.org"
