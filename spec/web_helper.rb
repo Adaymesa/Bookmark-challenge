@@ -1,16 +1,8 @@
-def sign_up
+def sign_up(email, password, pwd_conf)
   visit '/users/new'
   expect(page.status_code).to eq(200)
-  fill_in :email,    with: 'alice@example.com'
-  fill_in :password, with: 'oranges!'
-  fill_in :password_confirmation, with: 'oranges!'
+  fill_in :email,    with: email
+  fill_in :password, with: password
+  fill_in :password_confirmation, with: pwd_conf
   click_button 'Sign up'
 end
-
-def sign_up_with_args
-    visit '/users/new'
-    fill_in :email, with: 'alice@example.com'
-    fill_in :password, with: '12345678'
-    fill_in :password_confirmation, with: '87654321'
-    click_button 'Sign up'
-  end
