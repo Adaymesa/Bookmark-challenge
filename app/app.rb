@@ -59,33 +59,12 @@ class BookmarkManager < Sinatra::Base
       session[:user_id] = @user.id
       redirect to('/links')
     else
-      flash.now[:users] = "Password and confirmation password do not match"
-      # "Error when registering: #{flash[:users]}"
+      flash.now[:users] = @user.errors.full_messages
       erb :'users/new'
     end
   end
 
 
-
-
-
-
-  post '/welcome' do
-   #check email is correct --> helper  (email_correct?) returns boolean
-   password = BCrypt::Password.create(params[:password])
-   user = User.new(email: params[:email], password: password)
-   user.save
-   redirect '/welcome'
-
-  end
-
-  get '/welcome' do
-    erb :welcome
-  end
-
-
-
-
   # start the server if ruby file executed directly
-  run! if app_file == $0
+  run! if app_file == $PROGRAM_NAME
 end
