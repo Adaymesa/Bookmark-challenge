@@ -6,6 +6,7 @@ require 'rspec'
 require './app/models/link'
 require './app/app'
 require 'database_cleaner'
+require 'tilt/erb'
 
 Capybara.app = BookmarkManager
 
