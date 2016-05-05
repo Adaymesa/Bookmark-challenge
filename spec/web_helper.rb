@@ -6,3 +6,11 @@ def sign_up(email, password, pwd_conf)
   fill_in :password_confirmation, with: pwd_conf
   click_button 'Sign up'
 end
+
+def sign_in(email:, password:)
+  visit 'sessions/new'
+  expect(page.status_code).to eq(200)
+  fill_in :email, with: email
+  fill_in :password, with: password
+  click_button 'Sign in'
+end
