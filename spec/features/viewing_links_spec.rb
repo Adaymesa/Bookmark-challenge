@@ -58,3 +58,16 @@ feature 'Adding Tags' do
   end
 end
 
+feature 'Adding Multiple Tags' do
+  scenario 'I can add multiple tags to a link' do
+    visit '/links/new'
+    fill_in :title, with: 'Google'
+    fill_in :url, with: 'http://www.google.com'
+    fill_in :tags, with: 'drama adult'
+    click_button 'Submit'
+    link = Link.first
+    expect(link.tags.map(&:name)).to include('drama')
+    expect(link.tags.map(&:name)).to include('adult')
+  end
+end
+
