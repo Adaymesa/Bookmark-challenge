@@ -71,3 +71,22 @@ feature 'Adding Multiple Tags' do
   end
 end
 
+feature "Sign up" do
+  scenario "A user can sign up" do
+    visit "/signup"
+    fill_in :email, with "pepe@gmail.com"
+    fill_in :password, with "123pinpan"
+    click_button "Submit"
+
+    expect(current_path).to eq '/welcome'
+    expect(page).to have_content "Welcome to Bookmark Manager"
+
+
+
+
+
+
+
+
+  end
+end

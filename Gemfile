@@ -8,7 +8,7 @@ gem 'capybara'
 gem 'rspec'
 gem 'sinatra'
 gem 'rake'
-
+gem 'bcrypt'
 
 # source "https://rubygems.org"
 

@@ -33,6 +33,10 @@ class BookmarkManager < Sinatra::Base
     erb :'links/index'
   end
 
+  get '/signup' do
+    erb :signup
+  end
+
 
 
   # start the server if ruby file executed directly
