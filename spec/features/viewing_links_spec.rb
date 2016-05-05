@@ -81,6 +81,8 @@ feature 'User sign up' do
 
   scenario 'Requires a matching confirmation password' do
     expect { sign_up_with_args }.not_to change(User, :count)
+    expect(current_path).to eq '/users'
+    expect(page).to have_content "Password and confirmation password do not match"
   end
 end
 
