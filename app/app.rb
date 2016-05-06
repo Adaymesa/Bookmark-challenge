@@ -8,6 +8,7 @@ require 'bcrypt'
 
 class BookmarkManager < Sinatra::Base
 
+  use Rack::MethodOverride
   enable :sessions
   register Sinatra::Flash
   set :session_secret, 'super secret'
@@ -79,6 +80,14 @@ class BookmarkManager < Sinatra::Base
       erb :'sessions/new'
     end
   end
+
+  delete '/sessions' do
+    session[:user_id] = nil
+    flash.keep[:notice] = "goodbye!"
+    redirect to '/links'
+  end
+
+
 
 
   # start the server if ruby file executed directly
