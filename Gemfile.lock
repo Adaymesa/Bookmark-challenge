@@ -110,6 +110,7 @@ DEPENDENCIES
   data_mapper
   database_cleaner
   dm-postgres-adapter
+  dm-validations
   rake
   rspec
   sinatra
@@ -118,4 +119,4 @@ RUBY VERSION
    ruby 2.2.3p173
 
 BUNDLED WITH
-   1.12.1
+   1.12.2
